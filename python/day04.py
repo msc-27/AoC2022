@@ -6,5 +6,5 @@ def range2set(r):
     return set(range(lo, hi+1))
 
 ranges = [[range2set(x) for x in line] for line in csv]
-print(sum(1 for _ in filter(lambda x: x[0]<=x[1] or x[1]<=x[0], ranges)))
-print(sum(1 for _ in filter(lambda x: x[0] & x[1] != set(), ranges)))
+print(sum(map(lambda x: x[0]<=x[1] or x[1]<=x[0], ranges)))
+print(sum(map(lambda x: x[0] & x[1] != set(), ranges)))
