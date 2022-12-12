@@ -8,7 +8,7 @@ def tail_move(head, tail):
         return (0, y//abs(y))
     if y==0 and abs(x)==2:
         return (x//abs(x), 0)
-    if abs(x) >= 2 or abs(y) >= 2:
+    if abs(x) == 2 or abs(y) == 2:
         return (x//abs(x), y//abs(y))
     return (0,0)
 
