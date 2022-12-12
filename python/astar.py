@@ -10,7 +10,7 @@ class astar:
         self.trans_func = trans_f
         self.end_func = end_f
         self.estimate_func = estimate_f
-    def run(self, target_state):
+    def run(self, target_state = None):
     # Search for a path to the specified target state or,
     # if target_state == None, any state for which end_f returns True.
     # Return the cost and the reverse path to the target.
