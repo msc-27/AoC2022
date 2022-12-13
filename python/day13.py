@@ -1,3 +1,4 @@
+import ast
 import functools
 with open('input') as f:
     lines = [x.strip('\n') for x in f]
@@ -19,11 +20,11 @@ def compare(a, b):
     return compare(a[1:],b[1:])
 
 def valid(pair):
-    return compare(eval(pair[0]), eval(pair[1])) == -1
+    return compare(ast.literal_eval(pair[0]), ast.literal_eval(pair[1])) == -1
 
 print(sum(index for index,pair in enumerate(paras,start=1) if valid(pair)))
 
-packets = [eval(line) for line in lines if line != '']
+packets = [ast.literal_eval(line) for line in lines if line != '']
 packets.append([[2]])
 packets.append([[6]])
 packets.sort(key=functools.cmp_to_key(compare))
