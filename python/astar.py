@@ -5,7 +5,7 @@ class astar:
     # trans_f: function taking a state and returning a list of tuples
     #          giving states reachable from that state with their costs
     # end_f: function taking a state and returning True if it is an end state
-    # estimate_f: turns an ordinary BFS into an A-star search
+    # estimate_f: heuristic function for A* search (default is Dijkstra search)
         self.initial_state = initial
         self.trans_func = trans_f
         self.end_func = end_f
@@ -41,5 +41,5 @@ class astar:
                 new_rank = new_cost + self.estimate_func(next_state)
                 counter += 1
                 heapq.heappush(queue, (new_rank, counter, new_cost, next_state, state))
-        if target_state == None and end_func == None:
+        if target_state == None and self.end_func == None:
             return [(s,visited[s][0]) for s in visited]
