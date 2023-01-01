@@ -10,7 +10,6 @@ for y,line in enumerate(lines):
     for x,c in enumerate(line):
         Map[(x,y)] = c
 
-out = 0
 width = len(lines[0])-2
 height = len(lines)-2
 cycle = width * height // gcd(width, height)
