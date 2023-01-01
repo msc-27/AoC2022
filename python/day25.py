@@ -15,7 +15,7 @@ while True:
     if b * 2.5 > total: break
     b *= 5
 digits = []
-while(b):
+while b:
     digit = -2
     test = -b * 1.5
     while total > test:
